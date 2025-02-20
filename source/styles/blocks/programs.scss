@@ -1,5 +1,4 @@
 .programs {
-
   padding-bottom: 20px;
 
   @media (min-width: $width-tablet) {
@@ -7,7 +6,7 @@
   }
 
   @media (min-width: $width-desktop) {
-    padding-top: 82px;
+    padding-top: 83px;
     padding-bottom: 71px;
   }
 }
@@ -93,14 +92,16 @@
 
     &::before {
       top: 15px;
-      left: 393px;
+      left: auto;
+      right: -253px;
       width: 200px;
       height: 200px;
     }
 
     .programs__item--slim &::after {
       top: 4px;
-      left: 423px;
+      left: auto;
+      right: -223px;
       width: 140px;
       height: 194px;
       background-size: 140px 194px;
@@ -108,7 +109,8 @@
 
     .programs__item--pro &::after {
       top: 58px;
-      left: 359px;
+      left: auto;
+      right: -287px;
       width: 268px;
       height: 112px;
       background-size: 268px 112px;
@@ -146,6 +148,7 @@
 
 .programs__text {
   margin: 0;
+  margin-bottom: 9px;
   padding-bottom: 22px;
   font-family: $secondary-text;
 
@@ -164,13 +167,9 @@
 
 
 .programs__button {
-  width: max-content;
-  display: grid;
-  grid-template-columns: max-content 26px;
-  gap: 16px;
-  align-items: center;
-  padding: 10px 0;
-  margin-top: 9px;
+  position: relative;
+  display: inline-block;
+  padding: 10px 48px 10px 0;
   line-height: 16px;
   color: #000000;
   text-decoration: none;
@@ -180,6 +179,9 @@
 
   &::after {
     content: "";
+    position: absolute;
+    inset: 0 0 0 calc(100% - 32px);
+    margin: auto 0;
     width: 24px;
     height: 10px;
     background-image: url("../../icons/stack.svg#icon-arrow");
@@ -189,16 +191,16 @@
   }
 
   &:hover {
-    grid-template-columns: max-content 32px;
     background-color: transparent;
+    transition: 0.1s;
 
     &::after {
       width: 32px;
+      transition: 0.1s;
     }
   }
 
   &:focus {
-    grid-template-columns: max-content 32px;
     background-color: transparent;
 
     &::after {
@@ -212,8 +214,13 @@
   }
 
   @media (min-width: $width-tablet) {
+    padding-right: 49px;
+    max-width: 156px;
     font-size: 20px;
     line-height: 30px;
-    gap: 25px;
+
+    &::after {
+      inset: 0 0 0 calc(100% - 24px);
+    }
   }
 }

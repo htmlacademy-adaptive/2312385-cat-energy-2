@@ -1,0 +1,32 @@
+.catalog__container {
+  @media (max-width: $width-only-mobile) {
+    margin: 0 0 25px;
+  }
+
+  @media (min-width: $width-tablet) {
+    padding-bottom: 74px;
+  }
+
+  @media (min-width: $width-desktop) {
+    padding-bottom: 71px;
+  }
+}
+
+.catalog__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-bottom: 1px solid #ebebeb;
+
+  @media (min-width: $width-tablet) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    border: none;
+  }
+
+  @media (min-width: $width-desktop) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 62px 80px;
+  }
+}

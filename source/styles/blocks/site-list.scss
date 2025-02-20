@@ -10,6 +10,12 @@
   border-top: 1px solid #e6e6e6;
   background-color: #ffffff;
 
+  @media (max-width: $width-only-mobile) {
+    .nav--no-js & {
+      display: block;
+    }
+  }
+
   &--opened {
     display: block;
   }
@@ -21,6 +27,7 @@
     flex-wrap: wrap;
     font-size: 18px;
     line-height: 24px;
+    background-color: transparent;
     border: none;
   }
 
@@ -35,6 +42,10 @@
 .site-list__item {
   border-bottom: 1px solid #e6e6e6;
 
+  .nav--no-js &:last-child {
+    border-bottom: none;
+  }
+
   @media (min-width: $width-tablet) {
     border: none;
   }
@@ -42,7 +53,7 @@
 
 .site-list__link {
   display: block;
-  padding: 22px 0 23px;
+  padding: 22px 15px 23px;
   text-decoration: none;
   color: #000000;
 
@@ -75,14 +86,33 @@
   }
 
   @media (min-width: $width-desktop) {
-    color: #ffffff;
     padding: 16px 0 13px;
+
+    .page-header__container--index & {
+      color: #ffffff;
+    }
 
     &--current::after {
       left: 0;
       right: 0;
       bottom: 5px;
+    }
+
+    .page-header__container--index &--current::after {
       background-color: #ffffff;
+    }
+
+    .page-header__container--index &:hover {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .page-header__container--index &:focus {
+      outline: none;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .page-header__container--index &:active {
+      color: rgba(255, 255, 255, 0.3);
     }
   }
 }

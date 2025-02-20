@@ -1,28 +1,26 @@
 .example {
-  padding: 25px 0 40px;
   background-color: #eaeaea;
 
   @media (min-width: $width-tablet) {
     background-color: #ffffff;
   }
+
+  @media (min-width: $width-desktop) {
+    background-color: $basic-grey;
+  }
 }
 
 .example__container {
-  @media (min-width: $width-desktop) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-  }
-}
+  padding: 25px 0 40px;
 
-.example__content {
   @media (min-width: $width-tablet) {
-    display: grid;
-    grid-template-columns: 367px 1fr;
+    margin: 0;
+    padding: 45px 0 0;
   }
 
   @media (min-width: $width-desktop) {
-    margin-right: 137px;
+    padding: 0;
+    width: 100%;
   }
 }
 
@@ -31,8 +29,50 @@
   margin-bottom: 40px;
 
   @media (min-width: $width-tablet) {
-    grid-column: 1 / -1;
+    margin: 0 30px 60px;
     line-height: 60px;
+  }
+
+  @media (min-width: $width-desktop) {
+    margin: 0;
+    padding-bottom: 76px;
+    position: relative;
+    z-index: 0;
+    background-color: #ffffff;
+
+    & span {
+      display: block;
+      margin: 0 auto;
+      width: 1220px;
+    }
+  }
+}
+
+.example__wrapper {
+  @media (min-width: $width-desktop) {
+    margin: 0 auto;
+    padding: 70px 0 75px;
+    width: 1220px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+  }
+}
+
+.example__content {
+  @media (min-width: $width-tablet) {
+    margin: 0 30px 99px;
+    display: grid;
+    grid-template-columns: 367px 1fr;
+    gap: 55px 30px;
+  }
+
+  @media (min-width: $width-desktop) {
+    margin: 0;
+    margin-right: 127px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, max-content);
+    row-gap: 0;
   }
 }
 
@@ -42,7 +82,12 @@
   font-family: $secondary-text;
 
   @media (min-width: $width-tablet) {
+    margin-bottom: 0;
     grid-column: 1 / -1;
+  }
+
+  @media (min-width: $width-desktop) {
+    margin-bottom: 69px;
   }
 }
 
@@ -55,11 +100,14 @@
   gap: 32px;
 
   @media (min-width: $width-tablet) {
+    margin: 0;
     grid-column: 1 / 2;
+    gap: 43px;
   }
 
   @media (min-width: $width-desktop) {
-    grid-column: 1 / -1;
+    margin-bottom: 55px;
+    width: 366px;
   }
 }
 
@@ -76,13 +124,21 @@
   justify-self: center;
   font-family: $secondary-text;
   font-size: 12px;
-  line-height: 12px;
+  line-height: 1;
   text-transform: lowercase;
   background-color: #eaeaea;
   order: 1;
 
   @media (min-width: $width-tablet) {
+    padding: 0 8px;
+    width: max-content;
+    max-width: 142px;
+    font-size: 14px;
     background-color: #ffffff;
+  }
+
+  @media (min-width: $width-desktop) {
+    background-color: $basic-grey;
   }
 }
 
@@ -90,11 +146,17 @@
   margin: 0;
   padding: 14px 10px 16px;
   font-size: 24px;
-  line-height: 24px;
+  line-height: 1;
   color: #000000;
   text-transform: uppercase;
   border: 1px solid #cdcdcd;
   border-radius: 3px;
+
+  @media (min-width: $width-tablet) {
+    padding-bottom: 19px;
+    font-size: 30px;
+    line-height: 37px;
+  }
 }
 
 .example__spending {
@@ -105,14 +167,52 @@
   text-align: center;
 
   @media (min-width: $width-tablet) {
+    margin: 0;
+    margin-top: 11px;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: end;
+    gap: 9px;
     grid-column: 2 / -1;
+    font-size: 20px;
+    line-height: 1;
   }
 
   @media (min-width: $width-desktop) {
+    margin: 0;
     grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.example__expenses {
+  text-align: start;
+
+  @media (min-width: $width-desktop) {
+    width: 171px;
+  }
+}
+
+.example__total {
+  @media (min-width: $width-desktop) {
+    width: 204px;
   }
 }
 
 .example__view {
-  background-color: $basic-grey;
+  position: relative;
+  background-color: #eaeaea;
+
+  @media (min-width: $width-tablet) {
+    padding-bottom: 101px;
+    box-shadow: inset 0 151px 0 0 #ffffff;
+  }
+
+  @media (min-width: $width-desktop) {
+    margin-top: -205px;
+    padding: 0;
+    background-color: $basic-grey;
+    box-shadow: inset 0 135px 0 0 #ffffff;
+  }
 }
